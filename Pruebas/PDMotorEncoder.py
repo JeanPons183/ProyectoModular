@@ -143,8 +143,7 @@ try:
 	i=1 	# Para agregar el primer elemento, que la diferencia de tiempo es mucha
 
 	setMotor(0,0,0,0)
-
-	while t<tSimulacion:				#Esto es para parar el ciclo por tiempo
+	while (distancia_recorrida + distancia_recorrida2)/2 <= 420:				#Esto es para parar el ciclo por tiempo	Para 1 metro 		
 		#Calculo del tiempo
 		tiempoActual=time()
 		deltaTiempo = tiempoActual-tiempoAnterior	#Diferencia de tiempo
@@ -160,8 +159,11 @@ try:
 		errorAnt2 = error2				
 
 		# Ley de control
-		u1 = kp*error1+kd*dError1
-		u2 = kp*error2+kd*dError2
+		# u1 = kp*error1+kd*dError1
+		# u2 = kp*error2+kd*dError2
+  
+		u1 = 100
+		u2 = 100
 
 		#Imprimir control
 		print("\nControl 1: ", u1, "\nControl 2: ", u2)
